@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        https://www.springframework.org/schema/mvc
+        https://www.springframework.org/schema/mvc/spring-mvc.xsd">
+    <!-- beans: mvc를 사용하도록 적용 (mvc태그를 사용하기 위함)
+    	정적파일 서비스를 하기위해서 사용(기본 정적파일 서비스를 사용하지 못함) -->
+	<!-- /admin/: 가상의 디렉토리명 (Controller는 가상의 디렉토리로 움직이게 됨)-->
+    <bean id="/index" class="test1.index"></bean>
+    <bean id="/main" class="test1.main"></bean>
+    <bean id="/postok.do" class="test1.postok"></bean>
+    
+    <bean id="/contact/contact.do" class="test2.contact.contact"></bean>
+    <bean id="/info/info.do" class="test2.info.info"></bean>
+    <bean id="/qalist/qalist.do" class="test2.qalist.qalist"></bean>
+    
+    <!-- tiles 라이브러리 로드 -->
+    <bean class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+    	<property name="viewClass" value="org.springframework.web.servlet.view.tiles3.TilesView"></property>
+    </bean>
+ 	<bean class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+ 		<property name="definitions" value="/WEB-INF/tiles.xml"></property>   
+ 	</bean>
+    <!-- order를 이용하여 우선순위를 설정하게 됨. order를 사용하지 않고
+    	형태가 비슷한 class를 사용할 경우 아래에 있는 class는 사용하지 않게 됨
+    	property: 객체지향 언어(읽기, 쓰기 메소드를 호출)-파일, 디렉토리, 기준점 -->
+    
+    <!-- Controller와 jsp 이름을 동일화 시키는 작업 -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+    	<property name="prefix" value="/WEB-INF/view/"></property>
+    	<property name="suffix" value="*.jsp"></property>
+    </bean>  
+    
+    <!-- HTML 출력 파트 정적파일 서비스(HTML, JS, JQuery, CSS, IMAGE )-->
+	
+
+</beans>
