@@ -20,6 +20,9 @@
 <!--         <beans:bean class="test3.t1"></beans:bean> -->
         <beans:bean class="test3.api"></beans:bean>
         <beans:bean class="test3.upload"></beans:bean>
+        <beans:bean class="test3.dbquerys"></beans:bean>
+        <beans:bean class="test3.exam"></beans:bean>
+        
         <!-- Controller 이름을 정해주어야 함 -->
         
 <!--   <context:component-scan base-package="test3"></context:component-scan> -->
