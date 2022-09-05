@@ -1,32 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-
 <beans:beans xmlns="http://www.springframework.org/schema/mvc"
-	xmlns:beans="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:cache="http://www.springframework.org/schema/cache"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
 	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
-		http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache-4.3.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
-		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context-4.3.xsd">
-		
-		
-		<annotation-driven></annotation-driven>	<!-- 기본 공톡적인 부분을 적용시킴(mapping) -->
-        <default-servlet-handler/>	<!-- servlet class를 전반적으로 핸들링 하도록 하는 지시어 -->
-         <view-resolvers>	<!-- class에서 해당 jsp로 자동 연결 되도록 하는 태그 -->
-	        <jsp prefix="/WEB-INF/" suffix=".jsp"></jsp>
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+<annotation-driven></annotation-driven>
+        <default-servlet-handler/>	
+         <view-resolvers>	
+	        <jsp prefix="/WEB-INF/view/" suffix=".jsp"></jsp>
         </view-resolvers>
-<!--         <beans:bean class="test3.getinfo"></beans:bean> -->
-<!--         <beans:bean class="test3.t1"></beans:bean> -->
-        <beans:bean class="test3.api"></beans:bean>
-        <beans:bean class="test3.upload"></beans:bean>
-        <beans:bean class="test3.dbquerys"></beans:bean>
-        <beans:bean class="test3.exam"></beans:bean>
-        
-        <!-- Controller 이름을 정해주어야 함 -->
-        
-<!--   <context:component-scan base-package="test3"></context:component-scan> -->
-        
-		
+        <context:component-scan base-package="mydb"></context:component-scan>        
 		
 </beans:beans>
