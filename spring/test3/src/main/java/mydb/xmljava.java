@@ -41,6 +41,7 @@ public class xmljava {
 	
 	//사용자값 입력 파트
 	public String userinsert(String mid, String mpw, String mnm, String mage) {
+		//getter,setter를 DTO 상태에서 로드하며 mapper
 		userVO vo = new userVO();
 		vo.setMid(mid);
 		vo.setMpw(mpw);
@@ -72,4 +73,10 @@ public class xmljava {
 		String sign = "ok";
 			return sign;
 	}
+	//session.selectOne: 한개의 데이터
+	//session.selectList: 여러개의 데이터
+	//session.insert: 입력파트
+	//session.update: 수정파트
+	//session.delete: 삭제파트
+	//session.selectMap: Object 데이터 입력을 사용함
 }
