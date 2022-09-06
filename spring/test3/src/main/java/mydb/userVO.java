@@ -9,7 +9,7 @@ public class userVO {
 	private String midx;
 	private String mid;
 	private String mpw;
-	private String mname;
+	private String mnm;
 	private String mtel;
 	private String mage;
 	

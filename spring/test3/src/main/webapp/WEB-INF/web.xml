@@ -21,9 +21,9 @@
 			<!-- 어떤 파일과 연결할 것인가?-->
 			<param-value>
 <!-- 			/WEB-INF/dbconnect/dbconnect.xml -->
-			/mydb/root-context.xml
-			/WEB-INF/fileupload/fileup.xml
-			/WEB-INF/mapping/mapping.xml
+			/WEB-INF/spring/root-context.xml
+<!-- 			/WEB-INF/fileupload/fileup.xml -->
+			/WEB-INF/spring/mapping/mapping.xml
 			</param-value> 
 		</init-param>
 		<load-on-startup>1</load-on-startup>
